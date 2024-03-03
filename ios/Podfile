@@ -26,6 +26,9 @@ if linkage != nil
 end
 
 target 'RickyAndMorty' do
+
+  project 'RickyAndMorty.xcodeproj'
+
   config = use_native_modules!
 
   use_react_native!(
