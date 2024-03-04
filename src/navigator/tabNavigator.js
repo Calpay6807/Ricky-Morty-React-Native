@@ -13,6 +13,9 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        tabBarStyle: {
+          backgroundColor: AppColors.BLACK,
+        },
         tabBarIcon: ({focused, color, size}) => {
           switch (route.name) {
             case CHARACTERS:
@@ -42,7 +45,7 @@ const TabNavigator = () => {
           }
         },
         tabBarActiveTintColor: AppColors.GREEN,
-        tabBarInactiveTintColor: AppColors.GRAY,
+        tabBarInactiveTintColor: AppColors.WHITE,
       })}>
       <Tab.Screen name={CHARACTERS} component={Characters} />
       <Tab.Screen name={LOCATİONS} component={Locations} />
