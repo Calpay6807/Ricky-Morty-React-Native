@@ -10,4 +10,16 @@ axiosClient.defaults.headers = {
   Accept: 'application/json',
 };
 axios.defaults.withCredentials = true;
+
+axiosClient.interceptors.request.use(
+  async function (config) {
+    config.params = {
+      ...config.params,
+    };
+    return config;
+  },
+  function (error) {
+    return Promise.reject(error);
+  },
+);
 export {axiosClient};
