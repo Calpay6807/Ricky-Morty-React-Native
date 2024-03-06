@@ -13,7 +13,6 @@ const RootNavigator = () => {
         headerBackTitleVisible: false,
         headerTitle: '',
         headerStyle: {backgroundColor: 'black'},
-        backgroundColor: 'black',
       }}>
       <Stack.Screen
         options={{headerShown: false}}

@@ -11,6 +11,7 @@ import {CHARACTERS_URL} from '../../service/url';
 
 import {AppColors} from '../../theme/color';
 import CharactersCard from '../../component/character';
+import SearchBar from '../../component/ui';
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -42,6 +43,7 @@ const Characters = () => {
         </View>
       ) : (
         <FlatList
+          ListHeaderComponent={<SearchBar />}
           numColumns={2}
           data={characters}
           renderItem={({item, index}) => (
