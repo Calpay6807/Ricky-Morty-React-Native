@@ -13,9 +13,12 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        headerStyle: {backgroundColor: 'black'},
+        headerTitleStyle: {color: 'white', fontWeight: 'bold'},
         tabBarStyle: {
           backgroundColor: AppColors.BLACK,
         },
+
         tabBarIcon: ({focused, color, size}) => {
           switch (route.name) {
             case CHARACTERS:

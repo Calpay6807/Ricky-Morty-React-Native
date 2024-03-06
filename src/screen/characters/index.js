@@ -42,9 +42,10 @@ const Characters = () => {
         </View>
       ) : (
         <FlatList
+          numColumns={2}
           data={characters}
           renderItem={({item}) => <CharactersCard item={item} />}
-          keyExtractor={item => item.id}
+          keyExtractor={item => '_' + item.id}
         />
       )}
     </View>
@@ -56,5 +57,6 @@ export default Characters;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 5,
   },
 });
