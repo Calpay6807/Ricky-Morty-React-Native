@@ -44,7 +44,9 @@ const Characters = () => {
         <FlatList
           numColumns={2}
           data={characters}
-          renderItem={({item}) => <CharactersCard item={item} />}
+          renderItem={({item, index}) => (
+            <CharactersCard item={item} index={index} />
+          )}
           keyExtractor={item => '_' + item.id}
         />
       )}

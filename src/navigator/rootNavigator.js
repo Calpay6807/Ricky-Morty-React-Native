@@ -10,9 +10,16 @@ const RootNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerBackTitleVisible: false,
+        headerTitle: '',
+        headerStyle: {backgroundColor: 'black'},
+        backgroundColor: 'black',
       }}>
-      <Stack.Screen name={TAB} component={TabNavigator} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={TAB}
+        component={TabNavigator}
+      />
       <Stack.Screen name={CHDETAİL} component={CharactersDetail} />
     </Stack.Navigator>
   );

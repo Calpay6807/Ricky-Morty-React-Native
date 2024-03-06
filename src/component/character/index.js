@@ -12,7 +12,7 @@ import {CHDETAİL} from '../../utils/router';
 import {useNavigation} from '@react-navigation/native';
 
 const CharactersCard = props => {
-  const {item} = props;
+  const {item, index} = props;
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -26,6 +26,26 @@ const CharactersCard = props => {
           height: width / 2 - 10,
           margin: 5,
         }}>
+        <View
+          style={{
+            width: width / 14,
+            height: width / 14,
+            backgroundColor: 'black',
+            position: 'absolute',
+            top: 5,
+            right: 5,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 10,
+          }}>
+          <Text
+            style={{
+              color: AppColors.WHITE,
+              fontSize: 20,
+            }}>
+            {index}
+          </Text>
+        </View>
         <View
           style={{
             backgroundColor: AppColors.GREEN,
