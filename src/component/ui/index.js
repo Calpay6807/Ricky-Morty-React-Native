@@ -4,11 +4,13 @@ import CostumeInput from './costumeInput';
 import {FilterSearch, FilterSquare} from 'iconsax-react-native';
 import {AppColors} from '../../theme/color';
 
-const SearchBar = () => {
+const SearchBar = props => {
+  const {openModal} = props;
   return (
     <View style={{flex: 1, flexDirection: 'row'}}>
       <CostumeInput placeholder={'Search'} />
       <TouchableOpacity
+        onPress={openModal}
         style={{
           justifyContent: 'center',
           alignItems: 'center',

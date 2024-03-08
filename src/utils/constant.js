@@ -6,3 +6,21 @@ export const resizeMode = {
   CONTAIN: 'contain',
   CENTER: 'center',
 };
+
+export const status = [
+  {
+    id: 1,
+    name: 'Alive',
+    value: 'alive',
+  },
+  {
+    id: 2,
+    name: 'Dead',
+    value: 'dead',
+  },
+  {
+    id: 3,
+    name: 'Unknown',
+    value: 'unknown',
+  },
+];
