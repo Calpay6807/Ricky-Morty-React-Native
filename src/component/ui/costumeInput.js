@@ -5,7 +5,7 @@ import {AppColors} from '../../theme/color';
 
 const CostumeInput = props => {
   return (
-    <View style={{}}>
+    <View>
       <TextInput
         style={{
           minHeight: height / 20,
@@ -18,6 +18,9 @@ const CostumeInput = props => {
           width: width / 1.2,
         }}
         {...props}
+        keyboardType="default"
+        returnKeyType="search"
+        clearButtonMode="always"
       />
     </View>
   );

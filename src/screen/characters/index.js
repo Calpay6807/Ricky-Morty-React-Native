@@ -19,7 +19,8 @@ import {status, width} from '../../utils/constant';
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setİsLoading] = useState(false);
-  const [filterStatus, setStatus] = useState();
+  const [filterStatus, setStatus] = useState({});
+  const [searchText, setSearchText] = useState(null);
 
   const bottomSheet = useRef();
   const getCharacters = async => {
@@ -34,6 +35,34 @@ const Characters = () => {
       .finally(() => {
         setİsLoading(false);
       });
+  };
+  const filterCharacters = async => {
+    setİsLoading(true);
+    getRequest(CHARACTERS_URL, {name: searchText, status: filterStatus.value})
+      .then(res => {
+        setCharacters(res.data.results);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .finally(() => {
+        setİsLoading(false);
+      });
+  };
+  const searchCharacters = async => {
+    setİsLoading(true);
+    if (searchText) {
+      getRequest(CHARACTERS_URL, {name: searchText})
+        .then(res => {
+          setCharacters(res.data.results);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+        .finally(() => {
+          setİsLoading(false);
+        });
+    }
   };
 
   useEffect(() => {
@@ -58,12 +87,19 @@ const Characters = () => {
             {status.map(item => {
               return (
                 <TouchableOpacity
+                  onPress={() => {
+                    setStatus(item);
+                  }}
                   style={{
                     padding: 10,
                     borderWidth: 0.41,
                     borderColor: AppColors.WHITE,
                     margin: 5,
                     borderRadius: 20,
+                    backgroundColor:
+                      filterStatus.value == item.value
+                        ? AppColors.WHITE
+                        : AppColors.GREEN,
                   }}
                   key={item.id}>
                   <Text style={{textAlign: 'center', fontWeight: '600'}}>
@@ -74,6 +110,10 @@ const Characters = () => {
             })}
           </View>
           <TouchableOpacity
+            onPress={() => {
+              bottomSheet.current.close();
+              filterCharacters();
+            }}
             style={{
               padding: 10,
               borderWidth: 1,
@@ -98,7 +138,12 @@ const Characters = () => {
         ) : (
           <FlatList
             ListHeaderComponent={
-              <SearchBar openModal={() => bottomSheet.current.show()} />
+              <SearchBar
+                openModal={() => bottomSheet.current.show()}
+                setSearchText={setSearchText}
+                searchText={searchText}
+                searchCharacters={searchCharacters}
+              />
             }
             numColumns={2}
             data={characters}
