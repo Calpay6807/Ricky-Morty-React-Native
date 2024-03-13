@@ -20,4 +20,4 @@ yarn start
 
 ## Proje Gif
 
-<img width='250px' height='250px' src='../RickyAndMorty/src/assets/image/Ekran Resmi 2024-03-13 12.30.24.png'/>
+<img  src='../RickyAndMorty/src/assets/image/Ekran Resmi 2024-03-13 12.30.24.png'/>
