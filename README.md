@@ -20,4 +20,4 @@ yarn start
 
 ## Proje Gif
 
-![GIF Açıklaması](../RickyAndMorty/src/assets/image/Ekran%20Resmi%202024-03-13%2012.30.24.png)
+![GIF Açıklaması](../RickyAndMorty/src/assets/image/img.png)
