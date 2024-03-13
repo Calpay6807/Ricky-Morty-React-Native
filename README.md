@@ -20,4 +20,4 @@ yarn start
 
 ## Proje Gif
 
-![GIF Açıklaması](../RickyAndMorty/src/assets/image/img.png)
+<img src='./src/assets/image/img.png'/>
