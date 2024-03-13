@@ -10,6 +10,7 @@ import {resizeMode, width} from '../../utils/constant';
 import {AppColors} from '../../theme/color';
 import {CHDETAİL} from '../../utils/router';
 import {useNavigation} from '@react-navigation/native';
+import {Man, Woman} from 'iconsax-react-native';
 
 const CharactersCard = props => {
   const {item, index} = props;
@@ -59,13 +60,30 @@ const CharactersCard = props => {
             style={{color: AppColors.WHITE, fontWeight: 'bold'}}>
             {item.name}
           </Text>
-          <Text
+          <View
             style={{
-              color: AppColors.BLACK,
-              fontWeight: '500',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}>
-            {item.status}
-          </Text>
+            <Text
+              style={{
+                color: AppColors.BLACK,
+                fontWeight: '500',
+              }}>
+              {item.status}
+            </Text>
+            <Text
+              style={{
+                color: AppColors.BLACK,
+                fontWeight: '500',
+
+                flexDirection: 'row',
+              }}>
+              {item.gender === 'Male' ? <Man /> : <Woman />}
+              {item.gender}
+            </Text>
+          </View>
         </View>
       </ImageBackground>
     </TouchableOpacity>
