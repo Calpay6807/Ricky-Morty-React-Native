@@ -1,15 +1,14 @@
-import axios from 'axios';
+import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
 import {BASE_URL} from './url';
 
-const axiosClient = axios.create();
-
-axiosClient.defaults.baseURL = BASE_URL;
-
-axiosClient.defaults.headers = {
-  'Content-Type': 'application/json',
-  Accept: 'application/json',
-};
-axios.defaults.withCredentials = true;
+const axiosClient: AxiosInstance = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+  withCredentials: true,
+});
 
 axiosClient.interceptors.request.use(
   async function (config) {

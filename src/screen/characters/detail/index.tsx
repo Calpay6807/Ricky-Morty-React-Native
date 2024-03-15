@@ -11,8 +11,11 @@ import {getRequest} from '../../../service/verb';
 import {CHARACTERS_URL} from '../../../service/url';
 import {AppColors} from '../../../theme/color';
 import {height, width} from '../../../utils/constant';
+import {ICharacter} from '../../../models/character';
+import {INavigation} from '../../../models/navigation';
 
-const CharactersDetail = ({route}) => {
+const CharactersDetail: React.FC = ({route}) => {
+  console.log(route);
   //! yukarda proppertye props verirsek aşağıdaki yolu izlemeliyiz ama ({route })
   // yazarsak 2. adımı islemeliyiz
   //   const {
@@ -22,7 +25,7 @@ const CharactersDetail = ({route}) => {
   //   } = props;
 
   // 2.adım
-  const {item} = route.params;
+  const item: ICharacter = route?.params.item;
 
   const [character, setCharacter] = useState([]);
   const [loading, setİsLoading] = useState(false);
