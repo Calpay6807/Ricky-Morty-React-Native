@@ -4,11 +4,11 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import RootNavigator from './src/navigator/rootNavigator';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <NavigationContainer>
       <RootNavigator />
     </NavigationContainer>
   );
-}
-const styles = StyleSheet.create({});
+};
+export default App;

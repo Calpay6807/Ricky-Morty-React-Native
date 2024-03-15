@@ -11,9 +11,9 @@ import {AppColors} from '../../theme/color';
 import {CHDETAİL} from '../../utils/router';
 import {useNavigation} from '@react-navigation/native';
 import {Man, Woman} from 'iconsax-react-native';
+import {ICardCharacterPops} from '../../models/character';
 
-const CharactersCard = props => {
-  const {item, index} = props;
+const CharactersCard: React.FC<ICardCharacterPops> = ({item, index}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity

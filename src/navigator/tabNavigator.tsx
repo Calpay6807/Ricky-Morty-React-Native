@@ -9,7 +9,7 @@ import {I3Square, Location, People} from 'iconsax-react-native';
 import {AppColors} from '../theme/color';
 
 const Tab = createBottomTabNavigator();
-const TabNavigator = () => {
+const TabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({

@@ -15,9 +15,10 @@ import {AppColors} from '../../theme/color';
 import CharactersCard from '../../component/character';
 import SearchBar from '../../component/ui';
 import {status, width} from '../../utils/constant';
+import {ICharacter} from '../../models/character';
 
-const Characters = () => {
-  const [characters, setCharacters] = useState([]);
+const Characters: React.FC = () => {
+  const [characters, setCharacters] = useState<ICharacter[]>([]);
   const [loading, setİsLoading] = useState(false);
   const [filterStatus, setStatus] = useState({});
   const [searchText, setSearchText] = useState(null);

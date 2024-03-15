@@ -6,7 +6,7 @@ import {CHDETAİL, TAB} from '../utils/router';
 import CharactersDetail from '../screen/characters/detail';
 
 const Stack = createNativeStackNavigator();
-const RootNavigator = () => {
+const RootNavigator: React.FC = () => {
   return (
     <Stack.Navigator
       screenOptions={{
